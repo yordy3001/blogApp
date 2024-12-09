@@ -1,6 +1,5 @@
 import {useState} from "react";
 
-
 export default function RegisterPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
