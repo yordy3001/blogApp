@@ -1,17 +1,25 @@
-export default function post(){
-    return(
-        <div className="post">
-        <div className="image">
-        <img src="https://i0.wp.com/ohmydogblog.com/wp-content/uploads/2015/08/Lucas-and-his-one-block-walk-08.12.15.jpg?resize=1024%2C768&ssl=1"></img>
-        </div>
-          <div className="texts">
-            <h2>When Easy Things Feel Hard</h2>
-            <p className="info">
-              <a className="author">Maggie Marton</a>
-              <time>2021-01-07 17:45</time>
-            </p>
-            <p className="summary">Penny isn’t perfect. She’s super quirky (have you been following along with her Whimzees weirdness on Insta?) and she’s recently discovered how much she enjoys chewing up Barbies and dollhouse accessories.</p>
-          </div>
-        </div>
-    )
+import {formatISO9075} from "date-fns";
+import {Link} from "react-router-dom";
+
+export default function Post({_id,title,summary,cover,content,createdAt,author}) {
+
+  return (
+    <div className="post">
+      <div className="image">
+        <Link to={`/post/${_id}`}>
+          <img src={'http://localhost:5000/'+cover} alt=""/>
+        </Link>
+      </div>
+      <div className="texts">
+        <Link to={`/post/${_id}`}>
+        <h2>{title}</h2>
+        </Link>
+        <p className="info">
+          <a className="author">{author.username}</a>
+          <time>{formatISO9075(new Date(createdAt))}</time>
+        </p>
+        <p className="summary">{summary}</p>
+      </div>
+    </div>
+  );
 }
