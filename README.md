@@ -10,5 +10,6 @@ A custom startup script allows you to initialize both the server and client envi
 
 ## Demo
 
-https://github.com/user-attachments/assets/cabdb729-8714-4e75-92a8-23843a2ad9ca
+https://github.com/user-attachments/assets/398cc8b0-505c-49e1-a8df-038f0749dddd
+
 
